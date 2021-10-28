@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "e-commerce-product-page": {
+      "hosting": {
+        "E-Commerce-Product-Page": [
+          "e-commerce-product-page"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "e-commerce-product-page"
+  }
+}

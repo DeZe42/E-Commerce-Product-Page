@@ -1,0 +1,204 @@
+@import './shared/shared.scss';
+
+.webpage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Kumbh Sans', sans-serif;
+    &__header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 100px;
+        max-width: 1440px;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 32px;
+        border-bottom: 1px solid $grayish-blue;
+        &--logo {
+            display: flex;
+            cursor: pointer;
+        }
+        &--links {
+            display: flex;
+            align-items: center;
+            margin: 0 0 0 48px;
+            height: 100%;
+            .link {
+                display: flex;
+                align-items: center;
+                box-sizing: border-box;
+                padding: 0 12px;
+                height: 100%;
+                cursor: pointer;
+                color: $dark-grayish-blue;
+                border-bottom: 4px solid transparent;
+                &:hover {
+                    color: $very-vark-blue;
+                }
+                &.active {
+                    border-color: $orange;
+                }
+            }
+        }
+        &--container {
+            display: flex;
+            align-items: center;
+            margin: 0 0 0 auto;
+            position: relative;
+            .cart {
+                display: flex;
+                margin: 0 32px 0 0;
+                cursor: pointer;
+                &:hover {
+                    svg path {
+                        fill: $very-vark-blue;
+                    }
+                }
+            }
+            .cart-container {
+                display: flex;
+                width: 100vw;
+                height: 100vh;
+                background-color: transparent;
+                z-index: 101;
+                position: fixed;
+                top: 0;
+                left: 0;
+                &__cart {
+                    position: absolute;
+                    top: 90px;
+                    right: 60px;
+                    display: flex;
+                    flex-direction: column;
+                    box-sizing: border-box;
+                    width: 400px;
+                    background-color: #FFF;
+                    border-radius: 8px;
+                    box-shadow: 0 20px 40px -25px #000;
+                    z-index: 102;
+                    &--header {
+                        display: flex;
+                        align-items: center;
+                        box-sizing: border-box;
+                        padding: 0 32px;
+                        height: 70px;
+                        border-bottom: 1px solid $grayish-blue;
+                        span {
+                            font-size: 20px;
+                            line-height: 20px;
+                            font-weight: 700;
+                        }
+                    }
+                    &--content {
+                        display: flex;
+                        flex-direction: column;
+                        box-sizing: border-box;
+                        padding: 32px;
+                        .empty {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            height: 250px;
+                            span {
+                                font-weight: 700;
+                                color: $dark-grayish-blue;
+                            }
+                        }
+                        .row {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            height: 60px;
+                            margin: 0 0 16px 0;
+                            &:last-child {
+                                margin: 0;
+                            }
+                            img {
+                                height: 100%;
+                                border-radius: 8px;
+                                margin: 0 16px 0 0;
+                            }
+                            &__column {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+                                span {
+                                    color: $dark-grayish-blue;
+                                }
+                            }
+                            svg {
+                                cursor: pointer;
+                                margin: 0 0 0 auto;
+                                &:hover path {
+                                    fill: #FF2200;
+                                }
+                            }
+                        }
+                        .button {
+                            cursor: pointer;
+                            display: flex;
+                            justify-content: center;
+                            box-sizing: border-box;
+                            padding: 20px;
+                            width: 100%;
+                            background-color: $orange;
+                            border-radius: 8px;
+                            margin: 16px 0 0 0;
+                            span {
+                                color: #FFF;
+                                font-weight: 700;
+                            }
+                        }
+                    }
+                }
+            }
+            .profile {
+                display: flex;
+                height: 100%;
+                &:hover {
+                    img {
+                        border-color: $orange;
+                    }
+                }
+                img {
+                    cursor: pointer;
+                    height: 50px;
+                    border: 2px solid transparent;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        max-width: 1440px;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 80px 60px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .webpage {
+        &__header {
+            height: 60px;
+            &--links {
+                display: none;
+            }
+            &--container {
+                .cart-container {
+                    &__cart {
+                        width: calc(100% - 32px);
+                        margin: 0 16px 0 0;
+                        left: 16px;
+                    }
+                }
+            }
+        }
+        &__content {
+            padding: 0;
+        }
+    }
+}
