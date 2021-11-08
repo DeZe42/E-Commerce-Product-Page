@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "e-commerce-product-page-2fce2",
     "public": "dist",
     "ignore": [
       "firebase.json",
